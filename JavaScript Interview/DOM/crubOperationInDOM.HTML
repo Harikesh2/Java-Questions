@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="Langauge">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLangauge(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        // here in innerHTML the tree traversal will be 2 time and that will lead us to more time complexity (at first it will go and take the reference and than again go and change the value)
+        document.querySelector('.Langauge').appendChild(li);
+    }
+
+    addLangauge("java");
+    addLangauge("TypeScript");
+
+
+
+    function addOptimalLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        // here we are using a optimal way where we are directly adding the text node to that li
+        document.querySelector('.Langauge').appendChild(li);
+    }
+
+    addOptimalLanguage('Golang');
+
+
+    //  Edit functionallity for the DOM
+
+    // FIRST APPROACH
+    const secondChild = document.querySelector("li:nth-child(2)");
+    // li:nth-child(2) this mean nth li which we will pass in child
+    secondChild.innerHTML  = 'Mojo';
+    // again this approach is not optimal 
+
+    // SECOND APPROACH
+    const Newli = document.createElement('li');
+    Newli.textContent = 'Java'
+    secondChild.replaceWith(Newli)
+    // This will replace with the value 
+
+
+    const firstLi = document.querySelector("li:first-child");
+    console.log(firstLi);
+    firstLi.outerHTML = 'GoLang';
+
+
+
+    //  REMOVING AN ELEMENT IN THE DOM
+
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+
+
+</script>
+</html>

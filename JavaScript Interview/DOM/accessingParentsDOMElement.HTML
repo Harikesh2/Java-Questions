@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Parent DOM Element!!</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Webnesday</div>
+        <div class="day">Thrusday</div>
+    </div>
+    
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    // here we are getting the value of the whole parent class element and the all the div which are present in that class tag 
+    console.log(parent.children);
+    //  here we are getting all the HTMLcollection which are present in the parent 
+    // HTMLCollection(4) [div.day, div.day, div.day, div.day]
+    //                     0
+    //                     : 
+    //                     div.day
+    //                     1
+    //                     : 
+    //                     div.day
+    //                     2
+    //                     : 
+    //                     div.day
+    //                     3
+    //                     : 
+    //                     div.day
+    //                     length
+    //                     : 
+    //                     4
+    //                     [[Prototype]]
+    //                     : 
+    //                     HTMLCollection
+    //   like this 
+    console.log(parent.children[2].innerText);
+
+
+    //  here it a HTMLcollection and on that we cannot run any foreach or map loop so for that we will using the basic for loop
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+         // By this we can traverse over all the element in that HTMLcollection
+    }
+
+    parent.children[0].style.color = 'green'
+
+    console.log(parent.firstElementChild);
+    // by this we can access the first Element of the tag 
+    console.log(parent.lastElementChild);
+    // by this we can access the last Element of the tag 
+
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);
+    // // this will get us the parent element of a particular tag
+
+    console.log(dayOne.nextElementSibling);
+    // this will provide next Element Sibling to that first one 
+
+    console.log('Nodes: ', parent.childNodes);
+    // This is very important thing in JS it will print all the child Nodes present in that particular tag so if we add a comment in JS it will be added the node in that tree and if we add new element in that will also gives us the element when we print this
+
+
+</script>
+</html>

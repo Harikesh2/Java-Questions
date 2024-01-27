@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Basic DOM Element</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    // creating a new element in the dom and giving classname and the id 
+    console.log(div);
+    div.className = "main"
+    // giving className 
+    div.setAttribute('title','generated the title')
+    div.id = Math.round(Math.random()*10+1);
+    div.style.backgroundColor = 'orange'
+    div.style.padding = '23px'
+
+/* DIFFERENCE BETWEEN INNERTEXT AND THE DECLARING THE TEXT AND APPENDING IT TO THE DOM */    
+    // div.innerText = 'Harikesh Agrahari'
+    // this will first go and get the reference and than will made the changes so it will take 2 time traversal on the tree!!
+    const addText = document.createTextNode('Harikesh Agrahari');
+    div.appendChild(addText);
+    //  here we are doing traversal only one time and holding the value in the addText
+
+    document.body.appendChild(div);
+
+
+
+    // document.appendChild(div);
+</script>
+</html>
