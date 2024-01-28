@@ -1,0 +1,28 @@
+   syntax for event Bubbling
+    document.getElementById('images').addEventListener('click',function(){
+
+    },false);
+    // by default it's also going to false so it will be event bubbling
+
+
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside the  ul");
+    },false);
+    document.getElementById('owl').addEventListener('click',function(e){
+        console.log("clicked on owl");
+        e.stopPropagation();
+        // here we are stopping the bubbling by propagation
+    },false);
+    document.getElementById('google').addEventListener('click',function(e){
+        console.log("clicked on google");
+         e.preventDefault();
+        // here we are stopping the bubbling by propagation
+    },false);
+    
+
+
+
+    document.getElementById('images').addEventListener('click',function(){
+
+     },true);
+    //  syntax of event capturing

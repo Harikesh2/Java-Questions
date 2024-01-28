@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //  document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked!!')};
+
+
+    //  this is the apporach which is used in getting the thing click
+    // HOWEVER IN THESE WE USE EVENTLISTENER 
+    //  in old days people use jQuery and attachEvent to get the event listen
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e);
+    //     alert("owl clicked!!")
+    // },false)
+
+    //  Basic of event (type time defaultPrevented)
+    // target , toElement , srcElement , currentTarget 
+    // clientX, clientY , screenX, screenY
+    // atlKey, ctrlKey, shiftKey, keyCode
+
+    // DEFINING THE BUBBLING IN EVENT 
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the  ul");
+    // },false);
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("clicked on owl");
+    //     e.stopPropagation();
+    //     // here we are stopping the bubbling by propagation
+    // },false);
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("clicked on google");
+    //      e.preventDefault();
+    //     // here we are stopping the default behaviour of the a tag
+    // },false);
+   
+
+    // DEFINING THE CAPTURING IN EVENT
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the  ul");
+    // },true);
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("clicked on owl");
+    // },true);
+
+
+
+
+
+    // by default it's also going to false so it will be event bubbling 
+    // document.getElementById('images').addEventListener('click',function(){
+
+    //  },true);
+    // //  syntax of event capturing
+
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target);
+        let removeIt = e.target.parentNode;
+        if (e.target.tagName === "IMG") {
+            // TAGNAME IS THERE TO TELL THE TAG NAME OF THE E 
+   // parentNode will help us to get the tag or element of the selected tag
+        console.log(removeIt.parentNode);
+        removeIt.remove();
+
+        }
+       
+        
+
+        // ANOTHER WAY OF REMOVING THE ELEMENT IN THE MAIN TAG
+        // removeIt.parentNode.removeChild(removeIt); here we are using removeChild method
+    },false)
+
+
+</script>
+</html>
