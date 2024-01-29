@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h1>Hi Harikesh</h1>
+    <button id="stop"> stop </button>
+</body>
+
+<script>
+    //    syntax 
+    // setTimeout(function () {
+    //     console.log(`Harikesh`);
+    // },2000)
+    const sayName = function () {
+        console.log(`Harikesh`);
+    }
+
+    const changeDisplay = function(){
+        document.querySelector('h1').innerHTML =  `I am the King`
+    }
+
+   let timeOUT = setTimeout(changeDisplay,2000);
+    const stop = document.getElementById('stop');
+    stop.addEventListener('click',()=>{
+        clearTimeout(timeOUT)
+        // THIS CLEARTIMEOUT IS USED FOR CLEARING THE INTERVAL WHICH IS SET BY THE SETTIMEOUT
+        console.log("STOPPED");
+    });
+    // clearTimeout('click')
+
+</script>
+</html>

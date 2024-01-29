@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set INTERVAL</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h1>Hi Harikesh</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    // here in setInterval we can pass three interval as well 
+    let sayMyName = function (str) {
+        console.log(`Harikesh ${str}`);
+    }
+    let interval;
+    document.getElementById('start').addEventListener('click',function () {
+         interval =  setInterval(sayMyName, 1000, "hi harikesh");
+
+         
+    },false);
+
+    document.getElementById('stop').addEventListener('click',()=>{
+        clearInterval(interval);
+        console.log('Interval Stopped!!');
+
+    },false);
+
+
+  
+
+   clearInterval(interval);
+
+
+    // setInterval(function () {
+    //     console.log(`Hi Harikesh ${Date.now()}`);
+    // },2000)
+
+
+
+    // clearInterval()
+
+
+
+</script>
+</html>
