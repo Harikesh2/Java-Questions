@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <!-- XMLHttpRequest: readyState property
+The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+
+Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+
+
+</body>
+<script>
+//   for using XMLHTTPREQUEST we have to create a object  here so we can get the access of that!!
+
+const xhr = new XMLHttpRequest();
+
+//Now here we have to use open method for sending the request 
+const requestUrl =  "https://api.github.com/users/harikesh2";
+//  here first we are doing the method type of the request like GET POST than after we are giving the url of the api
+xhr.open('GET', requestUrl);
+console.log("here");
+// now here we are using the pre define function of the XMLrequest where we are using a function in which checking that the request is completed or not than preforming the operation
+xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState === 4){
+        const res = JSON.parse(this.responseText);
+        console.log(res.avatar_url);
+        
+        // const 
+    }
+}
+// here we are sending the HTTP request for the data
+xhr.send();
+
+
+</script>
+</html>
