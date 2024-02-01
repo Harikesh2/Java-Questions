@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure In JS</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+   <button id="Orange">Orange</button> 
+   <button id="green">Green</button> 
+</body>
+<script>
+
+
+// A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+//  real life example 
+     function clickHandler(color) {
+
+        // document.body.style.backgroundColor = `${color}`
+
+        // here when the method will call the whole lexical scope will sended so that the variable access is also going to be there that's call closure
+        return function () {
+            document.body.style.backgroundColor = `${color}`
+        }
+        
+     }
+
+     document.getElementById('Orange').onclick = clickHandler("Orange")
+     document.getElementById('green').onclick = clickHandler("green")
+
+</script>
+</html>

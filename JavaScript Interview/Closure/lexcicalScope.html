@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scope</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    
+</body>
+<script>
+
+// LEXICAL SCOPE IS THERE WHERE INNER FUNCTION IS GETTING THE ACCESS OF OUTER FUNCTION VARIABLE
+    function Outer() {
+        // BY EXAMPLE OF (SMALL CHILD HAVE THE ACCESS OF THE THING WHICH ELDER ONE HAVE HOWEVER, BROTHERS CANNOT ACCESS THERE EACH OTHER THINGS)
+        let username = "Harikesh"
+        function innerOne() {
+            let newUserName = "Agrahari"
+            console.log("innerOne", username);
+        }
+        function innerTwo() {
+            console.log(newUserName);
+            // this value will we cannot get from the above function because that is lexical scope
+
+            console.log("innerTwo", username);
+        }
+        innerOne();
+        innerTwo();
+    }
+    Outer();
+    console.log('OutSide the function', username);
+
+//            OUTPUT 
+
+//                       innerOne Harikesh
+// lexcicalScope.html:57 innerTwo Harikesh
+// lexcicalScope.html:63 Uncaught ReferenceError: username is not defined
+//     at lexcicalScope.html:63:41
+// 
+
+
+</script>
+</html>
