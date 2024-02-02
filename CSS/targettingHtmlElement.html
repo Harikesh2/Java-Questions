@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- THIS IS EXTERNAL CSS FORM WHERE WE ARE TARGETTING THE ELEMENTS -->
+    <style>
+        /* Asterisk is a rejax which is used to apply all element of the web page */
+        *{
+            margin: 0;
+
+        }
+        body {
+            /* background: url(https://images.pexels.com/photos/15868650/pexels-photo-15868650/free-photo-of-an-alternatively-dressed-woman-with-tattoos.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+            background-repeat: repeat-x;
+            background-position: 0 0; */
+            background-color: #212121;
+        }
+        h1 {
+            background-color: rgba(94, 181, 70, 0.355);
+            color: #fff;
+            /* for centering the text we can use text align center */
+            text-align: center;
+
+            /* PADDING IS SOMETHING INSIDE THE BORDER AND IT WILL GIVE SPACE TO THE ELEMENT!! */
+            padding: 20px;
+            /* margin: 120px; */
+            /* margin is something outside of the element and it will occur after padding and border!! */
+            /* SPECIAL CASE : MATGIN COLLAPSE IN CSS - when we give to element same margin they will share the margin with them self is known as margin collapse */
+
+            text-decoration: underline;
+            border: solid 2px;
+        }
+
+        /* THERE ARE BASICALLY TWO TYPE OF ELEMENT PROPERTY BLOCK LEVEL ELEMENT AND INLINE LEVEL ELEMENT IN WHICH BLOCK LEVEL ELEMENT ARE THOSE WHO BLOCK ALL THE WIDTH (FROM LEFT TO RIGHT )OF THE DISPLAY AND INLINE LEVEL ELEMENT ARE THOSE WHO DON'T BLOCK ALL WIDTH OF THE DISPLAY */
+        span{
+            font-size: 60px;
+            color: #fff;
+            text-align: center;
+            background-color: orange;
+            display: block;
+
+        }
+        /* by setting the property of display we can set the any of element to block or inline level elements */
+        p{
+            background-color: orange;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <span>Lorem ipsum dolor</span>
+    <p>Lorem, ipsum dolor.</p>
+</body>
+</html>

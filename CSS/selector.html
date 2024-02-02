@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Selectors in CSS</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    /* h1{
+            background-color: orange;
+    }          FIRST WAY OF TARGETTING THE H1 ELEMENT BY THERE NAME */  
+    .bg-orange{
+        background-color: orange;
+    }
+    #bg-green{
+        background-color: #fff;
+    }
+    /* WHEN EVER WE ARE TARGETTING ONE ELEMENT IN THE HTML ALWAYS THE MORE PREFERENCE IS GIVEN TO THE TARGETTING THE ELEMENT BY ID!! (IN SPECIFICITY) */
+    a[target="_blank"]{
+         /* FOR SELECTING A PARTICULAR ELEMENT OF A TAG WE CAN DO LIKE THIS */
+        background-color: #fff;
+        padding: 5px;
+        
+    }
+    /* SELECTING MULTIPLE ELEMENT */
+    h1, h2, h3{
+        background-color: #000;
+    }
+    /* selecting something inside the a element */
+    header nav > a {
+        background-color: #fff;
+    }
+   
+
+</style>
+<body style="background-color: #414141;">
+    <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+    <h2 class="bg-orange">Lorem, ipsum dolor.</h2>
+    <h3 class="bg-orange" id="bg-green">Lorem ipsum dolor sit amet.</h3>
+    <a target="_parent" href="https://google.com">Google Here</a>
+    <a target="_parent" href="https://google.com">Google Here</a>
+    <a target="_blank" href="https://google.com">Google Here</a>
+
+
+
+    
+    <header>
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+        
+        <nav>
+            <a href="https://google.com">Google Dot Com</a>
+        </nav>
+    </header>
+    
+</body>
+</html>

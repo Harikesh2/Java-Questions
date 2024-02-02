@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More On Selector</title>
+    <style>
+        /* HERE WE ARE UNDERSTANDING HOW WE CAN CHANGE THE STATE OF THE SELECTOR */
+        h1:hover{
+            background-color: red;
+            /* Once we are going to hover over there it will change the state */
+        }
+        /* this hover effect will help us when we go to that element and it will change there color or do something  */
+        button:hover{
+            background-color: orange;
+            padding: 20px;
+        }
+       h1::before{
+        content: "After !";
+        color: red;
+       }
+       h1::first-letter{
+        background-color: orange;
+        font-size: 80px;
+        padding: auto;
+       }
+    </style>
+</head>
+<body style=" background-color: #212121;color: #fff;">
+    <div>
+        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
+    <button>Submit</button>
+    </div>
+</body>
+</html>
